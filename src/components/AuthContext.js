@@ -29,11 +29,11 @@ export const AuthProvider = ({children}) => {
 
 };
 
-export const useAuth = () => {
-    const context = useContext(AuthContext);
+// // export const useAuth = () => {
+//     const context = useContext(AuthContext);
 
-    if(!context){
-        throw new Error('Fimile')
-    }
-    return context;
-}
+//     if(!context){
+//         throw new Error('Fimile')
+//     }
+//     return context;
+// }

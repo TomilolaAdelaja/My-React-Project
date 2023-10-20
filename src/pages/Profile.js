@@ -1,31 +1,40 @@
-import React from 'react';
-import { useAuth } from '../components/AuthContext';
+import React from "react";
+// const AuthContext = createContext();
+// import { useAuth } from "../components/AuthContext";
 // import {Link} from 'react-router-dom';
 // import { useCurrentUser } from '../hooks/currentUser';
 
-const Profile = () => {
-  const {user} = useAuth()
+const Profile = ({user}) => {
+  // const { user } = useAuth();
   // const [currentUser, setCurrentUser] = useState(null);
 
+  // // useEffect(() => {
+  // //   const user = localStorage.getItem('fakeAuthUser');
+  // //   setCurrentUser(user);
+  // // // }, []);
   // useEffect(() => {
-  //   const user = localStorage.getItem('fakeAuthUser');
-  //   setCurrentUser(user);
-  // // }, []);
+  //   const storedUser = JSON.parse(localStorage.getItem("user"));
+  //   if (storedUser) {
+  //     setUser(storedUser);
+  //   }
+  // }, []);
+
+  // // const login = (owner) => {
+  // //   setUser(owner);
+  // //   localStorage.setItem('user', JSON.stringify(owner))
+  // // }
+  
+  // // const logout = (owner) => {
+  // //   setUser(null);
+  // //   localStorage.removeItem('user')
+  // }
 
   return (
-    <div>
-      <h2>Profile Page</h2>
-      
-      {
-        user ? <h2>Welcome {user.userName}</h2>:<p>You need to log in to view this page</p>
-      }
-      {/* {currentUser ? (
-        <p>Logged in as: {currentUser}</p>
-      ) : (
-        <p>You need to log in to view this page.</p>
-      )} */}
-    </div>
-  );
-};
+    <section className='section'>
+      <h4>Hello, {user?.name}</h4>
+    </section>
+     
+  )
+}
 
 export default Profile;

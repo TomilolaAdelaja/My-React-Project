@@ -5,13 +5,13 @@ import { Protected } from "./components/ProtectedRoute";
 import { useAuth } from "./components/AuthContext";
 
 const SharedLayout = () => {
-  const {user} = useAuth()
+  // const {user} = useAuth()
   return (
     <>
-      {/* <Navigation /> */}
-      <Protected isSignedIn={user ? true : false}>
+      <Navigation />
+      {/* <Protected isSignedIn={user ? true : false}> */}
         <Outlet />
-      </Protected>
+      {/* </Protected> */}
     </>
   );
 };

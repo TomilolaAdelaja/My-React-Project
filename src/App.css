@@ -7,6 +7,42 @@
   background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d);
 }
 
+.center {
+  background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d);
+  display: flex;
+  /* margin: auto 0; */
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  /* min-height: 60vh; */
+}
+
+h1 {
+  font-size: 50px;
+  
+}
+
+
+
+.section {
+  background-image: linear-gradient(79deg, #7439db, #c66fbc 48%, #f7944d);
+  min-height: 100vh;
+  display: flex;
+}
+
+
+
+p {
+  font-size: 30px;
+  color: white;
+}
+
+span-one {
+  color: white;
+  font-size: 34px;
+}
+
 .auth-form-container, .login-form {
   display: flex;
   flex-direction: column;
@@ -19,7 +55,7 @@ label {
 
 
 input {
-  margin: 1.25rem 0;
+  margin: 1.5rem 0;
   padding: 1rem;
   border: none;
   border-radius: 10px;
@@ -28,8 +64,10 @@ input {
 
 button {
   border: none;
-  background-color: white;
-  padding: 20px;
+  background-color: rgb(225, 239, 239);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 30px;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -45,4 +83,17 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+}
+
+ul {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+Link {
+  text-decoration-style: none;
+}
+
+li li:hover li:active {
+    color: blue;
 }

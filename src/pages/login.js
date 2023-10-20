@@ -1,19 +1,30 @@
 import React, { useState } from "react";
-import { useAuth } from "../components/AuthContext";
+// import { useAuth } from "../components/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({setUser}) => {
+  // const { login } = useAuth();
+  // const [userInfo, setUserInfo] = useState({
+  //   userName: "",
+  //   password: "",
+  // });
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   setUser(userInfo);
+  //   navigate("/profile");
+  // };
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+
   const navigate = useNavigate();
-  const { login } = useAuth();
-  const [userInfo, setUserInfo] = useState({
-    userName: "",
-    password: "",
-  });
-  const handleLogin = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(userInfo);
-    navigate("/profile");
+    if (!name || !password) return;
+    setUser({ name: name, password: password });
+    navigate('/dashboard');
   };
+
   return (
     <div className="auto-form-container App login-form">
       <form>
@@ -22,9 +33,9 @@ const Login = () => {
         <input
           type="text"
           name="name"
-          value={userInfo.username}
+          value={name}
           onChange={(e) =>
-            setUserInfo({ ...userInfo, userName: e.target.value })
+            setName(e.target.value)
           }
         />
         <br />
@@ -33,14 +44,14 @@ const Login = () => {
         <input
           type="password"
           name="password"
-          value={userInfo.password}
+          value={password}
           onChange={(e) =>
-            setUserInfo({ ...userInfo, password: e.target.value })
+            setPassword(e.target.value)
           }
         />
 
         <br />
-        <button onClick={(e) => handleLogin(e)}>Login</button>
+        <button onClick={(e) => handleSubmit(e)}>Login</button>
       </form>
     </div>
   );
